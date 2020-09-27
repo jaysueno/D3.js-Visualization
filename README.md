@@ -1,8 +1,12 @@
-# D3 Homework - Data Journalism and D3
+# D3 Visualization - Data Journalism and D3
 
-![Newsroom](https://media.giphy.com/media/v2xIous7mnEYg/giphy.gif)
+## Live dashboard at: https://jaysueno.github.io/D3.js-Visualization/
 
-## Background
+![dashboard photo](data/viz1.jpg)
+
+## Objective
+
+We use D3 - Data Driven Documents (https://d3js.org/) to visualize US [national health data](https://www.census.gov/acs/www/data/data-tables-and-tools/data-profiles/2014/). 
 
 Welcome to the newsroom! You've just accepted a data visualization position for a major metro paper. You're tasked with analyzing the current trends shaping people's lives, as well as creating charts, graphs, and interactive elements to help readers understand your findings.
 

@@ -1,5 +1,5 @@
 // @TODO: YOUR CODE HERE!
-var svgWidth = 800;
+var svgWidth = 700;
 var svgHeight = 500;
 
 var margin = {
@@ -28,16 +28,16 @@ var chartGroup = svg.append("g")
 var chosenXAxis = "poverty";
 
 // function used for updating x-scale var upon click on axis label
-function xScale(healthData, chosenXAxis) {
-    // create scales
-    var xLinearScale = d3.scaleLinear()
-      .domain([d3.min(healthData, d => d[chosenXAxis]) * 0.8,
-        d3.max(healthData, d => d[chosenXAxis]) * 1.2
-      ])
-      .range([0, width]);
+// function xScale(healthData, chosenXAxis) {
+//     // create scales
+//     var xLinearScale = d3.scaleLinear()
+//       .domain([d3.min(healthData, d => d[chosenXAxis]) * 0.8,
+//         d3.max(healthData, d => d[chosenXAxis]) * 1.2
+//       ])
+//       .range([0, width]);
   
-    return xLinearScale;
-  }
+//     return xLinearScale;
+//   }
 
 // Retrieve data from the CSV file and execute everything below
 d3.csv("assets/data/data.csv").then(function(healthData, err) {
@@ -57,13 +57,13 @@ d3.csv("assets/data/data.csv").then(function(healthData, err) {
     // Step 2: Create scale functions
     // ==============================
     var xLinearScale = d3.scaleLinear()
-        .domain([8, d3.max(healthData, d => d.poverty)])
+        .domain([9, d3.max(healthData, d => d.poverty)])
         .range([0, width]);
     console.log(d3.extent(healthData, d => d.poverty));    
     // var xLinearScale = xScale(healthData, chosenXAxis);
 
     var yLinearScale = d3.scaleLinear()
-        .domain([6, d3.max(healthData, d => d.smokes) * 3])
+        .domain([9, d3.max(healthData, d => d.smokes) * 2.9])
         .range([height, 0]);
     console.log(d3.extent(healthData, d => d.smokes));
 
@@ -90,7 +90,8 @@ d3.csv("assets/data/data.csv").then(function(healthData, err) {
         .append("circle")
         .attr("cx", d => xLinearScale(d.poverty))
         .attr("cy", d => yLinearScale(d.smokes))
-        .attr("r", "10")
+        .attr("class", "stateCircle")
+        .attr("r", "8")
         .attr("fill", "dodgerblue")
         .attr("opactity", ".5")
 
@@ -134,7 +135,7 @@ d3.csv("assets/data/data.csv").then(function(healthData, err) {
     chartGroup.append("text")
       .attr("transform", "rotate(-90)")
       .attr("y", 0 - margin.left + 40)
-      .attr("x", 0 - (height / 2))
+      .attr("x", 0 - (height / 1.5))
       .attr("dy", "1em")
       .attr("class", "axisText")
       .text("Smoking Rate");
