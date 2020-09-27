@@ -93,14 +93,6 @@ d3.csv("assets/data/data.csv").then(function(healthData, err) {
         .attr("r", "10")
         .attr("fill", "dodgerblue")
         .attr("opactity", ".5")
-        // .append("text").text(function(d) {
-        //     return d.abbr;
-        // })
-        // .attr("font-family", "sans-serif")
-        // .attr("font-size", "10px")
-        // .attr("text-anchor", "middle")
-        // .attr("fill", "white");
-        // .text(d => d.abbr);
 
     // Add state lables to circles
     var circlesLables = chartGroup.selectAll()
@@ -110,29 +102,18 @@ d3.csv("assets/data/data.csv").then(function(healthData, err) {
         .attr("x", d => xLinearScale(d.poverty))
         .attr("y", d => yLinearScale(d.smokes) + 3)
         .attr("font-family", "sans-serif")
-        .attr("font-size", "10px")
+        .attr("font-size", "8px")
         .attr("text-anchor", "middle")
         .attr("fill", "white")
         .text(d => d.abbr);
 
-    // circlesLables
-    //     .attr("x", d => xLinearScale(d.poverty))
-    //     .attr("y", d => yLinearScale(d.smokes))
-    //     .text(function(d) {
-    //         return d.abbr;
-    //     })
-    //     .attr("font-family", "sans-serif")
-    //     .attr("font-size", "10px")
-    //     .attr("text-anchor", "middle")
-    //     .attr("fill", "white");
-
     //  Step 6: Initialize tool tip
     // ==============================
     var toolTip = d3.tip()
-      .attr("class", "tooltip")
+      .attr("class", "d3-tip")
       .offset([80, -60])
       .html(function(d) {
-        return (`${d.state}<br>Smoking Rate: ${d.smokes}<br>Poverty Rate: ${d.poverty}`);
+        return (`${d.state}<br>% of Smokers: ${d.smokes}<br>% in Poverty: ${d.poverty}`);
       });
 
     // Step 7: Create tooltip in the chart
@@ -141,7 +122,7 @@ d3.csv("assets/data/data.csv").then(function(healthData, err) {
 
     // Step 8: Create event listeners to display and hide the tooltip
     // ==============================
-    circlesGroup.on("click", function(data) {
+    circlesGroup.on("mouseover", function(data) {
         toolTip.show(data, this);
       })
         // onmouseout event
@@ -161,7 +142,7 @@ d3.csv("assets/data/data.csv").then(function(healthData, err) {
     chartGroup.append("text")
       .attr("transform", `translate(${width / 2}, ${height + margin.top + 30})`)
       .attr("class", "axisText")
-      .text("Poverty Rate");
+      .text("% In Poverty");
   }).catch(function(error) {
     console.log(error);
 
