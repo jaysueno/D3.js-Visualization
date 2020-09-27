@@ -8,23 +8,23 @@
 
 We use D3 - Data Driven Documents (https://d3js.org/) to visualize US [national health data](https://www.census.gov/acs/www/data/data-tables-and-tools/data-profiles/2014/). 
 
-Welcome to the newsroom! You've just accepted a data visualization position for a major metro paper. You're tasked with analyzing the current trends shaping people's lives, as well as creating charts, graphs, and interactive elements to help readers understand your findings.
+In this data visualization we will employ javascript to render 2 different versions of a D3 scatter plot. 
 
-The editor wants to run a series of feature stories about the health risks facing particular demographics. She's counting on you to sniff out the first story idea by sifting through information from the U.S. Census Bureau and the Behavioral Risk Factor Surveillance System.
+The first is static and compares rates of poverty to smoking. I create unique circles and include the state abbreviations to them. Also, this visualization includes a tooltip. When you hover over the state circle, an info box appears with detailed info.
 
-The data set included with the assignment is based on 2014 ACS 1-year estimates: [https://factfinder.census.gov/faces/nav/jsf/pages/searchresults.xhtml](https://factfinder.census.gov/faces/nav/jsf/pages/searchresults.xhtml), but you are free to investigate a different data set. The current data set includes data on rates of income, obesity, poverty, etc. by state. MOE stands for "margin of error."
+![static plot](photos/viz1.jpg)
 
-### Before You Begin
+The second page shows all of the above, PLUS you can switch between different data sets on the X and Y axies. 
 
-1. Create a new repository for this project called `D3-challenge`. **Do not add this homework to an existing repository**.
+![customizable plot](photos/viz2.jpg)
 
-2. Clone the new repository to your computer.
+### Files
+* Javascript - app.js
+* HTML - index.html, (second vis page)
+* CSS - d3Style.css, style.css
+* CSV - data.csv
 
-3. Inside your local git repository, create a directory for the D3 challenge. Use the folder name to correspond to the challenge: **D3_data_journalism**.
 
-4. This homeworks utilizes both **html** and **Javascript** so be sure to add all the necessary files. These will be the main files to run for analysis.
-
-5. Push the above changes to GitHub or GitLab.
 
 ## Your Task
 
