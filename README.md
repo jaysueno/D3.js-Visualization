@@ -2,8 +2,6 @@
 
 ## Live dashboard at: https://jaysueno.github.io/D3.js-Visualization/
 
-![dashboard photo](data/viz1.jpg)
-
 ## Objective
 
 We use D3 - Data Driven Documents (https://d3js.org/) to visualize US [national health data](https://www.census.gov/acs/www/data/data-tables-and-tools/data-profiles/2014/). 
@@ -26,62 +24,40 @@ The second page shows all of the above, PLUS you can switch between different da
 
 ## About The Code
 
-### Core Assignment: D3 Dabbler (Required Assignment)
+1. Use the D3 library to read in `samples.json`.
 
-![4-scatter](Images/4-scatter.jpg)
+2. Create a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual.
+* Use `sample_values` as the values for the bar chart.
+* Use `otu_ids` as the labels for the bar chart.
+* Use `otu_labels` as the hovertext for the chart.
 
-You need to create a scatter plot between two of the data variables such as `Healthcare vs. Poverty` or `Smokers vs. Age`.
+3. Create a bubble chart that displays each sample.
+* Use `otu_ids` for the x values.
+* Use `sample_values` for the y values.
+* Use `sample_values` for the marker size.
+* Use `otu_ids` for the marker colors.
+* Use `otu_labels` for the text values.
 
-Using the D3 techniques we taught you in class, create a scatter plot that represents each state with circle elements. You'll code this graphic in the `app.js` file of your homework directory—make sure you pull in the data from `data.csv` by using the `d3.csv` function. Your scatter plot should ultimately appear like the image at the top of this section.
+4. Display the sample metadata, i.e., an individual's demographic information.
 
-* Include state abbreviations in the circles.
+5. Display each key-value pair from the metadata JSON object somewhere on the page.
 
-* Create and situate your axes and labels to the left and bottom of the chart.
+6. Create a gauge chart to plot the weekly washing frequency of the individual.
+* Adapt the Gauge Chart from <https://plot.ly/javascript/gauge-charts/> to plot the weekly washing frequency of the individual.
+* You will need to modify the example gauge code to account for values ranging from 0 through 9.
 
-* Note: You'll need to use `python -m http.server` to run the visualization. This will host the page at `localhost:8000` in your web browser.
+7. Update all of the plots any time that a new sample is selected.
 
-- - -
+## Deployment
 
-### Bonus: Impress the Boss (Optional Assignment)
-
-Why make a static graphic when D3 lets you interact with your data?
-
-![7-animated-scatter](Images/7-animated-scatter.gif)
-
-#### 1. More Data, More Dynamics
-
-You're going to include more demographics and more risk factors. Place additional labels in your scatter plot and give them click events so that your users can decide which data to display. Animate the transitions for your circles' locations as well as the range of your axes. Do this for two risk factors for each axis. Or, for an extreme challenge, create three for each axis.
-
-* Hint: Try binding all of the CSV data to your circles. This will let you easily determine their x or y values when you click the labels.
-
-#### 2. Incorporate d3-tip
-
-While the ticks on the axes allow us to infer approximate values for each circle, it's impossible to determine the true value without adding another layer of data. Enter tooltips: developers can implement these in their D3 graphics to reveal a specific element's data when the user hovers their cursor over the element. Add tooltips to your circles and display each tooltip with the data that the user has selected. Use the `d3-tip.js` plugin developed by [Justin Palmer](https://github.com/Caged)—we've already included this plugin in your assignment directory.
-
-![8-tooltip](Images/8-tooltip.gif)
-
-* Check out [David Gotz's example](https://bl.ocks.org/davegotz/bd54b56723c154d25eedde6504d30ad7) to see how you should implement tooltips with d3-tip.
-
-- - -
-
-### Assessment
-
-Your final product will be assessed on the following metrics:
-
-* Creation of a **new** repository on GitHub called `D3-Challenge` (note the kebab-case). Do not add to an already existing repo.
-
-* Completion of all steps in the core assignment
-
-* Coherency of scatter plot (labels, ticks)
-
-* Visual attraction
-
-* Professionalism
+* Deploy your app to a free static page hosting service, such as GitHub Pages. Submit the links to your deployment and your GitHub repo.
 
 * Ensure your repository has regular commits (i.e. 20+ commits) and a thorough README.md file
 
-**Good luck!**
+### About the Data
 
-### Copyright
+Hulcr, J. et al.(2012) _A Jungle in There: Bacteria in Belly Buttons are Highly Diverse, but Predictable_. Retrieved from: [http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/](http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/)
 
-Trilogy Education Services © 2019. All Rights Reserved.
+### To learn more about Jay Sueno visit his [LinkedIn](https://www.linkedin.com/in/jay-sueno-359a274/)
+
+##### All rights reserved 2020. All code is created and owned by Jay Sueno. If you use his code, please visit his LinkedIn and give him a a skill endorsement in python and data science. Visit him at: https://www.linkedin.com/in/jay-sueno-359a274/
