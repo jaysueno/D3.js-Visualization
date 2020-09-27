@@ -24,21 +24,6 @@ var svg = d3
 var chartGroup = svg.append("g")
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-// Initial Params
-var chosenXAxis = "poverty";
-
-// function used for updating x-scale var upon click on axis label
-// function xScale(healthData, chosenXAxis) {
-//     // create scales
-//     var xLinearScale = d3.scaleLinear()
-//       .domain([d3.min(healthData, d => d[chosenXAxis]) * 0.8,
-//         d3.max(healthData, d => d[chosenXAxis]) * 1.2
-//       ])
-//       .range([0, width]);
-  
-//     return xLinearScale;
-//   }
-
 // Retrieve data from the CSV file and execute everything below
 d3.csv("assets/data/data.csv").then(function(healthData, err) {
     if (err) throw err;
