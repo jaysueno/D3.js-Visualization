@@ -24,39 +24,23 @@ The second page shows all of the above, PLUS you can switch between different da
 
 ## About The Code
 
-1. Use the D3 library to read in `samples.json`.
-
-2. Create a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual.
-* Use `sample_values` as the values for the bar chart.
-* Use `otu_ids` as the labels for the bar chart.
-* Use `otu_labels` as the hovertext for the chart.
-
-3. Create a bubble chart that displays each sample.
-* Use `otu_ids` for the x values.
-* Use `sample_values` for the y values.
-* Use `sample_values` for the marker size.
-* Use `otu_ids` for the marker colors.
-* Use `otu_labels` for the text values.
-
-4. Display the sample metadata, i.e., an individual's demographic information.
-
-5. Display each key-value pair from the metadata JSON object somewhere on the page.
-
-6. Create a gauge chart to plot the weekly washing frequency of the individual.
-* Adapt the Gauge Chart from <https://plot.ly/javascript/gauge-charts/> to plot the weekly washing frequency of the individual.
-* You will need to modify the example gauge code to account for values ranging from 0 through 9.
-
-7. Update all of the plots any time that a new sample is selected.
+1. Set up the SVG canvas dimensions. 
+2. Use D3 to create an SVG wrapper to contain the code for the scatter plot. 
+3. Import the CSV data using D3 "promise."
+4. Parse the data and caste the string as numbers to be used in the plots. 
+5. Create the scales functions for the x and y values as well as the Axes. 
+6. Create the circles and labels for each circle. 
+7. Initialize the tooltip and create event listner to display the metadata.
+8. Label the axes and append the chart. 
+9. "Catch" the promise if there's an error. 
 
 ## Deployment
 
-* Deploy your app to a free static page hosting service, such as GitHub Pages. Submit the links to your deployment and your GitHub repo.
-
-* Ensure your repository has regular commits (i.e. 20+ commits) and a thorough README.md file
+* Deploy your app to a free static page hosting service, such as GitHub Pages.
 
 ### About the Data
 
-Hulcr, J. et al.(2012) _A Jungle in There: Bacteria in Belly Buttons are Highly Diverse, but Predictable_. Retrieved from: [http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/](http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/)
+This data comes from the [US Census Bureau - American Community Survey from 2014](https://www.census.gov/acs/www/data/data-tables-and-tools/data-profiles/2014/). This is a Data Profile. Data Profiles have the most frequently requested social, economic, housing, and demographic data. Each of these four subject areas is a separate data profile. The data profiles summarize the data for a single geographic area, both numbers and percent, to cover the most basic data on all topics. 
 
 ### To learn more about Jay Sueno visit his [LinkedIn](https://www.linkedin.com/in/jay-sueno-359a274/)
 
