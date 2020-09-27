@@ -90,7 +90,7 @@ d3.csv("assets/data/data.csv").then(function(healthData, err) {
         .append("circle")
         .attr("cx", d => xLinearScale(d.poverty))
         .attr("cy", d => yLinearScale(d.smokes))
-        .attr("class", "stateCircle")
+        // .attr("class", "stateCircle")
         .attr("r", "8")
         .attr("fill", "dodgerblue")
         .attr("opactity", ".5")

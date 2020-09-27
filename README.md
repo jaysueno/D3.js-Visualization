@@ -24,9 +24,7 @@ The second page shows all of the above, PLUS you can switch between different da
 * CSS - d3Style.css, style.css
 * CSV - data.csv
 
-
-
-## Your Task
+## About The Code
 
 ### Core Assignment: D3 Dabbler (Required Assignment)
 
